@@ -1,0 +1,9 @@
+{
+  "name": "Netball Hockey Scoreboard Master",
+  "description": "A professional, LED-styled netball scoreboard with customizable teams, logos, and quarter timing logic. Includes a 30-minute trial period.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

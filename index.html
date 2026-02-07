@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Netball Pro Scoreboard</title>
+    <!-- Native App Capability -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&family=Jersey+10&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+      }
+      
+      /* Fonts with fallbacks */
+      .font-led {
+        font-family: 'Jersey 10', 'Courier New', monospace;
+      }
+      .font-ui {
+        font-family: 'Chakra Petch', sans-serif;
+      }
+      .font-team {
+        font-family: 'Oswald', 'Arial Black', sans-serif;
+      }
+      
+      /* LED Colors */
+      .led-red { color: #ff0000; text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+      .led-green { color: #00ff00; text-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
+      .led-yellow { color: #ffff00; text-shadow: 0 0 5px rgba(255, 255, 0, 0.5); }
+      .led-white { color: #ffffff; text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+      
+      /* Matrix Background */
+      .led-matrix-bg {
+        background-color: #000;
+        background-image: radial-gradient(rgba(50, 50, 50, 0.3) 1px, transparent 1px);
+        background-size: 4px 4px;
+      }
+
+      /* Fullscreen body handling */
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: #000;
+        position: fixed; /* Prevent pull-to-refresh on Android */
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "core-js/": "https://aistudiocdn.com/core-js@^3.47.0/",
+        "regenerator-runtime/": "https://aistudiocdn.com/regenerator-runtime@^0.14.1/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+        "vite": "https://aistudiocdn.com/vite@^7.2.4",
+        "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+        "@vitejs/plugin-legacy": "https://aistudiocdn.com/@vitejs/plugin-legacy@^7.2.1"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-black text-white h-screen w-screen overflow-hidden" style="touch-action: manipulation;">
+    <div id="root" class="h-full w-full"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
